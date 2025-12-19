@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
 
 :root {
+    color-scheme: light;
     --bg-color: #1a1b41;
     /* Dark blue background */
     --device-case: #000000;
