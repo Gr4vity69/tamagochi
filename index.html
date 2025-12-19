@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tamagotchi - Mascota Virtual</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&family=Nunito:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="retro-device">
+            <!-- PANTALLA PRINCIPAL DE JUEGO -->
+            <div class="game-screen">
+                <!-- CAPA DE ESTADÍSTICAS (Arriba Izquierda) -->
+                <div class="stats-overlay">
+                    <div class="stat-row">
+                        <span class="stat-icon">♥</span> <span id="val-happy">98%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-icon">zzz</span> <span id="val-bored">10%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-icon">⚡</span> <span id="val-energy">50%</span>
+                    </div>
+                </div>
+
+                <!-- INDICADOR DE ESTADO ANIMICO (Arriba Centro) -->
+                <div class="mood-header">
+                    <span id="mood-text">NORMAL</span>
+                </div>
+
+                <!-- MUNDO DEL JUEGO (Sprite) -->
+                <div class="game-world">
+                    <img id="pet-sprite" src="pet-sprites/normal_1.png" alt="Pixel Pet" />
+                </div>
+                <img id="game-ball" src="pet-sprites/pelota.png" alt="Ball" style="display: none;" />
+
+                <!-- CAPA DE CHAT (Flotante) -->
+                <div class="chat-overlay" id="chat-overlay">
+                    <!-- Los mensajes se inyectarán aquí dinámicamente -->
+                </div>
+
+                <!-- BARRA DE INPUT (Dentro de la pantalla, abajo) -->
+                <div class="input-area">
+                    <input type="text" id="chat-input" placeholder="Toca para hablar..." autocomplete="off">
+                    <button id="btn-send" class="pixel-send-btn">></button>
+                </div>
+            </div>
+
+            <!-- BOTONES FÍSICOS (Debajo de la pantalla) -->
+            <div class="controls-area">
+                <button class="action-btn yellow-btn" id="btn-play">PLAY</button>
+                <button class="action-btn yellow-btn big-btn" id="btn-pet">PET</button>
+                <button class="action-btn yellow-btn" id="btn-sleep">SLEP</button>
+            </div>
+        </div>
+
+        <!-- ELEMENTOS OCULTOS PARA COMPATIBILIDAD JS (TEMPORAL) -->
+        <div style="display:none;">
+            <div id="happiness-bar"></div>
+            <div id="energy-bar"></div>
+            <div id="boredom-bar"></div>
+            <div id="chat-history"></div> <!-- JS might look for this to append messages -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
